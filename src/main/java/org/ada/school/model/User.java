@@ -5,9 +5,7 @@ import org.ada.school.dto.UserDto;
 import java.util.Date;
 import java.util.UUID;
 
-public class User
-
-{
+public class User {
 
     String id;
 
@@ -20,8 +18,7 @@ public class User
     Date createdAt;
 
 
-    public User( UserDto userDto )
-    {
+    public User(UserDto userDto) {
         id = UUID.randomUUID().toString();
         name = userDto.getName();
         lastName = userDto.getLastName();
@@ -29,18 +26,15 @@ public class User
         createdAt = new Date();
     }
 
-    public String getName()
-    {
+    public String getName() {
         return name;
     }
 
-    public String getId()
-    {
+    public String getId() {
         return id;
     }
 
-    public void update( UserDto userDto )
-    {
+    public void update(UserDto userDto) {
         name = userDto.getName();
         lastName = userDto.getLastName();
         email = userDto.getEmail();

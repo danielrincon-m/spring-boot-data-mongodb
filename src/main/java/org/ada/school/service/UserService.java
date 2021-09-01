@@ -5,15 +5,14 @@ import org.ada.school.model.User;
 
 import java.util.List;
 
-public interface UserService
-{
-    User create( User user );
+public interface UserService {
+    User create(UserDto user);
 
-    User findById( String id );
+    User findById(String id);
 
     List<User> all();
 
-    boolean deleteById( String id );
+    boolean deleteById(String id);
 
-    User update( UserDto userDto, String id );
+    User update(UserDto userDto, String id);
 }

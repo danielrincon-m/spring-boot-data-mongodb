@@ -1,28 +1,27 @@
 package org.ada.school.service;
 
 import org.ada.school.dto.UserDto;
+import org.ada.school.model.IUser;
 import org.ada.school.model.User;
-import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-@Service
 public class UserServiceHashMap implements UserService {
 
     private final HashMap<String, User> usersMap = new HashMap<>();
 
 
     @Override
-    public User create(UserDto userDto) {
+    public IUser create(UserDto userDto) {
         User user = new User(userDto);
         usersMap.put(user.getId(), user);
         return user;
     }
 
     @Override
-    public User findById(String id) {
+    public IUser findById(String id) {
         if (usersMap.containsKey(id)) {
             return usersMap.get(id);
         }
@@ -30,7 +29,7 @@ public class UserServiceHashMap implements UserService {
     }
 
     @Override
-    public List<User> all() {
+    public List<IUser> all() {
         return new ArrayList<>(usersMap.values());
     }
 
@@ -40,7 +39,7 @@ public class UserServiceHashMap implements UserService {
     }
 
     @Override
-    public User update(UserDto userDto, String id) {
+    public IUser update(UserDto userDto, String id) {
         if (usersMap.containsKey(id)) {
             User user = usersMap.get(id);
             user.update(userDto);

@@ -5,16 +5,12 @@ import org.ada.school.dto.UserDto;
 import java.util.Date;
 import java.util.UUID;
 
-public class User {
+public class User implements IUser {
 
     String id;
-
     String name;
-
     String email;
-
     String lastName;
-
     Date createdAt;
 
 
@@ -32,6 +28,18 @@ public class User {
 
     public String getId() {
         return id;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public Date getCreatedAt() {
+        return createdAt;
     }
 
     public void update(UserDto userDto) {

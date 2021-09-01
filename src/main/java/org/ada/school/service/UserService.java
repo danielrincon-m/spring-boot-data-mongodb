@@ -1,19 +1,23 @@
 package org.ada.school.service;
 
 import org.ada.school.dto.UserDto;
-import org.ada.school.model.User;
+import org.ada.school.model.IUser;
 
+import java.util.Date;
 import java.util.List;
 
-public interface UserService
-{
-    User create( User user );
+public interface UserService {
+    IUser create(UserDto userDto);
 
-    User findById( String id );
+    IUser findById(String id);
 
-    List<User> all();
+    List<IUser> all();
 
-    boolean deleteById( String id );
+    boolean deleteById(String id);
 
-    User update( UserDto userDto, String id );
+    IUser update(UserDto userDto, String id);
+
+    List<IUser> findUsersWithNameOrLastNameLike(String queryText);
+
+    List<IUser> findUsersCreatedAfter(Date startDate);
 }

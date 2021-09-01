@@ -3,6 +3,7 @@ package org.ada.school.service;
 import org.ada.school.dto.UserDto;
 import org.ada.school.model.IUser;
 
+import java.util.Date;
 import java.util.List;
 
 public interface UserService {
@@ -15,4 +16,8 @@ public interface UserService {
     boolean deleteById(String id);
 
     IUser update(UserDto userDto, String id);
+
+    List<IUser> findUsersWithNameOrLastNameLike(String queryText);
+
+    List<IUser> findUsersCreatedAfter(Date startDate);
 }

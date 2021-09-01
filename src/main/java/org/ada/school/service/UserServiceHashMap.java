@@ -5,6 +5,7 @@ import org.ada.school.model.IUser;
 import org.ada.school.model.User;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 
@@ -49,5 +50,13 @@ public class UserServiceHashMap implements UserService {
         }
     }
 
+    @Override
+    public List<IUser> findUsersWithNameOrLastNameLike(String queryText) {
+        return null;
+    }
 
+    @Override
+    public List<IUser> findUsersCreatedAfter(Date startDate) {
+        return null;
+    }
 }

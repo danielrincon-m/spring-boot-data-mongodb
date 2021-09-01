@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -54,5 +55,15 @@ public class UserServiceMongoDB implements UserService {
             return userRepository.save(userDocument);
         }
         return null;
+    }
+
+    @Override
+    public List<IUser> findUsersWithNameOrLastNameLike(String queryText) {
+        return userRepository.findByNameLikeOrLastNameLike(queryText, queryText);
+    }
+
+    @Override
+    public List<IUser> findUsersCreatedAfter(Date startDate) {
+        return userRepository.findByCreatedAtAfter(startDate);
     }
 }
